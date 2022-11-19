@@ -1,0 +1,22 @@
+@import "../../../../global.scss";
+
+.itemCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: $mainColor;
+    svg {
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 500px) {
+    .itemCount {
+        padding-right: 0;
+        margin-right: 0%;
+        svg {
+            cursor: pointer;
+        }
+    }
+}

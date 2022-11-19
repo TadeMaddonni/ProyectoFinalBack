@@ -1,0 +1,78 @@
+@import "../../../../global.scss";
+
+.cartHeroContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-block: 40px;
+    .cartHero {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+
+        h1 {
+            color: $mainColor;
+            font-weight: 800;
+            font-size: 50px;
+        }
+        span {
+            color: $secondaryColor;
+            width: 300px;
+            text-align: center;
+            font-size: 40px;
+        }
+    }
+}
+
+@media (max-width: 508px) {
+    .cartHeroContainer {
+        width: 100%;
+        display: none;
+        display: flex;
+        .cartHero {
+            width: 100%;
+            max-width: 1200px;
+            flex-direction: column;
+            h1 {
+                text-align: center;
+                @include mobileTitles;
+            }
+            span {
+                width: 100%;
+                text-align: center;
+
+                @include mobileSubtitles;
+            }
+        }
+    }
+}
+@media (min-width: 509px) and (max-width: 900px) {
+    .cartHeroContainer {
+        width: 100%;
+        max-width: 100vw;
+        margin-block: 60px;
+        .cartHero {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+            padding-left: 60px;
+
+            h1 {
+                color: $mainColor;
+                font-weight: 800;
+                font-size: 50px;
+                @include tabletTitles;
+            }
+            span {
+                color: $secondaryColor;
+                width: 300px;
+                text-align: center;
+                @include tabletSubtitles;
+            }
+        }
+    }
+}

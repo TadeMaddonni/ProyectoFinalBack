@@ -1,0 +1,155 @@
+@import "../../../../global.scss";
+
+.homeHeroContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .homeHero {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            h2 {
+                font-weight: 400;
+                font-size: 60px;
+                line-height: 60px;
+            }
+            h1 {
+                font-weight: 700;
+                font-size: 70px;
+                line-height: 70px;
+                color: $mainColor;
+            }
+            span {
+                font-size: 20px;
+                text-align: left;
+            }
+        }
+        .right {
+            width: 55%;
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .homeHeroContainer {
+        width: 100%;
+        display: flex;
+        .homeHero {
+            width: 100%;
+            max-width: 1200px;
+            flex-direction: column;
+            .left {
+                margin-top: 40px;
+                width: 100%;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+                justify-content: center;
+                h2 {
+                    @include mobileSubtitles;
+                }
+                h1 {
+                    @include mobileTitles;
+                }
+                span {
+                    font-size: 20px;
+                    text-align: left;
+                }
+            }
+            .right {
+                width: 55%;
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 501px) and (max-width: 900px) {
+    .homeHeroContainer {
+        width: 100%;
+        display: flex;
+        margin-top: 60px;
+        .homeHero {
+            width: 100%;
+            max-width: 1200px;
+            flex-direction: column;
+            gap: 20px;
+            .left {
+                margin-top: 40px;
+                width: 100%;
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+                justify-content: center;
+                h2 {
+                    @include tabletSubtitles;
+                }
+                h1 {
+                    @include tabletSubtitles;
+                }
+                span {
+                    font-size: $tabletText;
+                    text-align: left;
+                }
+            }
+            .right {
+                width: 45%;
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+/* @media (max-width: 508px) {
+    .homeHeroContainer {
+        width: 100%;
+        display: flex;
+        .homeHero {
+            width: 100%;
+            max-width: 1200px;
+            flex-direction: column;
+            .left {
+                margin-top: 40px;
+                width: 100%;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+                justify-content: center;
+                h2 {
+                    @include mobileSubtitles;
+                }
+                h1 {
+                    @include mobileTitles;
+                }
+                span {
+                    font-size: 20px;
+                    text-align: left;
+                }
+            }
+            .right {
+                width: 55%;
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+ */

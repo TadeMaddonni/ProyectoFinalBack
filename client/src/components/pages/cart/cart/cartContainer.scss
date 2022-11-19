@@ -1,0 +1,144 @@
+@import "../../../../global.scss";
+
+.cartContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 60vh;
+
+    .cart {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .cartBuyPart {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding-right: 20px;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 14px;
+            }
+            span {
+                color: $mainColor;
+                font-weight: 700;
+                text-align: center;
+                font-size: 22px;
+            }
+            button {
+                font-size: 18px;
+                padding: 8px 20px;
+                background-color: $mainColor;
+                color: $thirdColor;
+                font-weight: 600;
+                font-family: $mainFont;
+                border: none;
+                border-radius: 5px;
+            }
+        }
+
+        .emptyCart {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            justify-content: center;
+
+            h3 {
+                font-size: 45px;
+                font-weight: 400;
+            }
+            .cartCTA {
+                width: fit-content;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                padding: 10px 20px;
+                background-color: $mainColor;
+                border-radius: 5px;
+                border: none;
+                font-family: $mainFont;
+                color: $thirdColor;
+                cursor: pointer;
+                span {
+                    margin-top: 2px;
+                }
+            }
+        }
+    }
+}
+.cartItemContainer {
+    width: 100%;
+    max-width: 800px;
+}
+
+.cartLine {
+    width: 100%;
+    max-width: 800px;
+}
+@media (max-width: 500px) {
+    .cartContainer {
+        min-height: 59vh;
+        .cart {
+            padding-inline: 15px;
+
+            .emptyCart {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                justify-content: center;
+                align-items: center;
+
+                h3 {
+                    text-align: center;
+                    @include mobileSubtitles;
+                }
+                .cartCTA {
+                    span {
+                        margin-top: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 501px) and (max-width: 900px) {
+    .cartContainer {
+        min-height: 59vh;
+        .cart {
+            padding-inline: 15px;
+
+            .emptyCart {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                justify-content: center;
+                align-items: center;
+
+                h3 {
+                    text-align: center;
+                    @include tabletSubtitles;
+                }
+                .cartCTA {
+                    span {
+                        margin-top: 2px;
+                        font-size: $tabletText;
+                    }
+                }
+            }
+        }
+    }
+}

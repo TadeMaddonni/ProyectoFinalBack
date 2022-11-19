@@ -1,0 +1,84 @@
+@import "../../../../global.scss";
+
+.contactFormContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contactForm {
+        padding-block: 20px;
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+
+        form {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            div {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                label {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    font-weight: 700;
+                }
+                input {
+                    width: 100%;
+                    padding: 10px 13px;
+                    border: none;
+                    border-radius: 5px;
+                    outline: 2px solid $mainColor;
+                    font-family: $mainFont;
+                    color: $mainColor;
+
+                    &::placeholder {
+                        font-style: italic;
+                        font-weight: 400;
+                        font-family: $mainFont;
+                        color: $mainColor;
+                    }
+                }
+                textarea {
+                    width: 100%;
+                    padding: 10px 13px;
+                    border: none;
+                    border-radius: 5px;
+                    outline: 2px solid $mainColor;
+                    font-family: $mainFont;
+                    color: $mainColor;
+                    &::placeholder {
+                        font-style: italic;
+                        font-weight: 400;
+                        font-family: $mainFont;
+                        color: $mainColor;
+                    }
+                }
+
+                button {
+                    padding: 8px 20px;
+                    background-color: transparent;
+                    border: 2px solid $mainColor;
+                    font-family: $mainFont;
+                    border-radius: 5px;
+                    color: $mainColor;
+                    font-weight: 500;
+                    cursor: pointer;
+
+                    &:hover {
+                        font-weight: 800;
+                        transition: 0.4s ease;
+                    }
+                }
+            }
+        }
+    }
+}

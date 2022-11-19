@@ -1,0 +1,25 @@
+.menuListContainer {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .menuList {
+        width: 100%;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 80px;
+        align-content: center;
+        justify-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .menuListContainer {
+        .menuList {
+            grid-template-columns: 1fr;
+            max-width: 100vw;
+        }
+    }
+}

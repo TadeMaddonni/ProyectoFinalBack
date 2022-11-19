@@ -1,0 +1,65 @@
+@import "../../../../global.scss";
+.homeCtaContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .homeCta {
+        padding-block: 40px;
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        h3 {
+            font-size: 50px;
+            font-weight: 400;
+        }
+
+        button {
+            width: fit-content;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            color: $thirdColor;
+            background-color: $mainColor;
+            border-radius: 5px;
+            border: none;
+            font-size: 20px;
+            font-weight: 300;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .homeCtaContainer {
+        padding-inline: 20px;
+        .homeCta {
+            justify-content: center;
+            align-items: center;
+            h3 {
+                text-align: center;
+                @include mobileSubtitles;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 501px) and (max-width: 900px) {
+    .homeCtaContainer {
+        padding-inline: 20px;
+        .homeCta {
+            justify-content: center;
+            align-items: center;
+            h3 {
+                @include tabletSubtitles;
+            }
+        }
+    }
+}
+

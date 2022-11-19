@@ -1,0 +1,85 @@
+@import "../../../../global.scss";
+a {
+    text-decoration: none;
+    color: black;
+}
+.item {
+    width: 180px;
+    padding: 1.3rem;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+
+    img {
+        margin-top: -3rem;
+        height: 130px;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    .itemHeadDescription {
+        text-align: left;
+        flex: 1;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        .headDescriptionName {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: $mainColor;
+            text-transform: capitalize;
+            flex: 1;
+        }
+    }
+    div {
+        margin-top: 15px;
+        .adminBtn {
+            padding: 9px;
+            border-radius: 5px;
+            margin-top: 30px;
+            background-color: $mainColor;
+            color: white;
+            font-size: 12px;
+        }
+    }
+
+    a {
+        margin-top: 15px;
+        .adminBtn {
+            padding: 9px;
+            border-radius: 5px;
+            margin-top: 30px;
+            background-color: $mainColor;
+            color: white;
+            font-size: 12px;
+        }
+    }
+}
+
+.item .itemFootDescription {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemHeadDescription p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.HeadDescriptionInfo {
+    font-size: 0.8rem;
+    color: #a0a0a0a0;
+}
+
+.footDescriptionPrice {
+    width: 100%;
+    font-weight: 700;
+    color: $mainColor;
+    text-align: center;
+}

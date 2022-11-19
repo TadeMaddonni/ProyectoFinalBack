@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+$mainColor: #6c8cbc;
+$secondaryColor: #000000;
+$thirdColor: #fff;
+
+/*  Fonts  */
+$mainFont: "Josefin Sans", sans-serif;
+
+/* Sizes */
+$mobileTitle: 40px;
+$mobileText: 16px;
+$mobileSubtitle: 40px;
+
+$tabletTitle: 50px;
+$tabletSubtitle: 45px;
+$tabletText: 25px;
+
+@mixin mobileTitles {
+    font-size: $mobileTitle;
+    line-height: $mobileTitle + 10px;
+}
+@mixin mobileSubtitles {
+    font-size: $mobileSubtitle;
+    line-height: $mobileSubtitle + 10px;
+}
+@mixin mobileText {
+    font-size: $mobileText;
+    line-height: $mobileText + 4px;
+}
+
+/* Tablets */
+
+@mixin tabletTitles {
+    font-size: $tabletTitle;
+    line-height: $tabletTitle + 10px;
+}
+@mixin tabletSubtitles {
+    font-size: $tabletSubtitle;
+    line-height: $tabletSubtitle + 10px;
+}
+@mixin tabletText {
+    font-size: $tabletText;
+    line-height: $tabletText + 4px;
+}

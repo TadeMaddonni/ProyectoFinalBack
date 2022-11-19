@@ -1,0 +1,37 @@
+@import "../../../../global.scss";
+
+a {
+    text-decoration: none;
+}
+.cartWidget {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    span {
+        color: $mainColor;
+        font-weight: 600;
+    }
+    svg {
+        fill: $mainColor;
+        height: 24px;
+        width: 24px;
+    }
+}
+
+@media (max-width: 508px) {
+    .cartWidget {
+        cursor: pointer;
+        margin-top: 20px;
+        span {
+            color: #fff;
+            font-weight: 600;
+        }
+        svg {
+            fill: #fff;
+            height: 24px;
+            width: 24px;
+        }
+    }
+}

@@ -1,0 +1,257 @@
+@import "../../../global.scss";
+
+.topbarContainer {
+    background-color: $thirdColor;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    z-index: 100;
+    overflow-x: hidden;
+    .topbar {
+        width: 100%;
+        max-width: 1250px;
+        display: flex;
+        justify-content: space-between;
+        .left {
+            width: 50%;
+            height: 100%;
+            ul {
+                padding-left: 20px;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                list-style-type: none;
+                justify-content: start;
+                gap: 40px;
+                align-items: center;
+                li {
+                    a {
+                        text-decoration: none;
+                        font-weight: 500;
+                        font-size: 17px;
+                        line-height: 17px;
+                        color: $secondaryColor;
+                    }
+                }
+            }
+        }
+        .right {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            align-items: center;
+            gap: 40px;
+
+            button {
+                background-color: $mainColor;
+                color: $thirdColor;
+                padding: 7px 10px;
+                font-weight: 500;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-family: $mainFont;
+            }
+
+            .hamburger {
+                display: none;
+            }
+        }
+
+        /* Mobile navbar */
+        &.responsive {
+            width: 200px;
+            height: 100vh;
+            background-color: $mainColor;
+            position: fixed;
+            top: 0;
+            right: -400px;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            transition: all 0.6s ease-in-out;
+
+            .left {
+                width: 100%;
+                height: fit-content;
+
+                ul {
+                    padding-left: 0;
+                    flex-direction: column;
+                    li {
+                        a {
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                right: 0;
+            }
+
+            .right {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-right: 0px;
+                align-items: center;
+                gap: 40px;
+
+                button {
+                    background-color: white;
+                    color: $mainColor;
+                    padding: 7px 10px;
+                    font-weight: 500;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-family: $mainFont;
+                }
+            }
+        }
+    }
+
+    .responsiveTopbar {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .topbarContainer {
+        .topbar {
+            display: none;
+            &.responsive {
+                &.active {
+                    width: 200px;
+                }
+            }
+        }
+        .responsiveTopbar {
+            box-shadow: 0px 5px 4px -3px rgba(0, 0, 0, 0.1);
+            padding-right: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 70px;
+            position: fixed;
+            z-index: 100;
+            background-color: white;
+            transition: all 0.6s ease;
+
+            .hamburger {
+                width: 32px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                z-index: 100;
+                cursor: pointer;
+
+                span {
+                    width: 100%;
+                    height: 3px;
+                    background-color: $mainColor;
+                    transform-origin: left;
+                    transition: all 0.7s ease;
+                }
+            }
+
+            &.active {
+                background-color: $mainColor;
+                .hamburger {
+                    span {
+                        &:first-child {
+                            background-color: white;
+                            transform: rotate(45deg);
+                        }
+                        &:nth-child(2) {
+                            opacity: 0;
+                        }
+                        &:last-child {
+                            background-color: white;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .topbarContainer {
+        .topbar {
+            display: none;
+            &.responsive {
+                &.active {
+                    width: 400px;
+                }
+            }
+        }
+        .responsiveTopbar {
+            height: 90px;
+
+            .hamburger {
+                width: 32px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                z-index: 100;
+                cursor: pointer;
+
+                span {
+                    width: 100%;
+                    height: 3px;
+                    background-color: $mainColor;
+                    transform-origin: left;
+                    transition: all 0.7s ease;
+                }
+            }
+            .left {
+                ul {
+                    li {
+                        a {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                background-color: $mainColor;
+                .hamburger {
+                    span {
+                        &:first-child {
+                            background-color: white;
+                            transform: rotate(45deg);
+                        }
+                        &:nth-child(2) {
+                            opacity: 0;
+                        }
+                        &:last-child {
+                            background-color: white;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 902px) {
+    .topbarContainer {
+        .topbar {
+            display: flex;
+        }
+    }
+}

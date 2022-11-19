@@ -1,0 +1,26 @@
+@import "../../global.scss";
+
+.adminContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .admin {
+        margin-top: 50px;
+        max-width: 1200px;
+        width: 100%;
+
+        h1 {
+            font-weight: 800;
+            font-size: 50px;
+            color: $mainColor;
+        }
+
+        h2 {
+            margin-top: 50px;
+            font-weight: 800;
+            font-size: 50px;
+            color: $mainColor;
+        }
+    }
+}
