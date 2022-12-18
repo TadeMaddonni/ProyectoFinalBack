@@ -7,23 +7,22 @@ export const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
     console.log(cartList);
-    const getCartId = () => {
-        const cartId = localStorage.getItem("cartId");
+    const getCartId = async () => {
+        const cartId = JSON.parse(localStorage.getItem("cartId"));
         if (cartId) {
             return cartId;
         } else {
-            fetch("http://localhost:8080/api/carrito/", {
+            const response = await fetch("http://localhost:8080/api/carrito/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-            })
-                .then((res) => res.json())
-                .then((res) => {
-                    localStorage.setItem("cartId", JSON.stringify(res.id));
-                    console.log(res);
-                    return res.id;
-                });
+            });
+
+            const data = await response.json();
+            localStorage.setItem("cartId", JSON.stringify(data.id));
+            console.log(data);
+            return data.id;
         }
     };
     useEffect(() => {
@@ -32,13 +31,14 @@ const CartContextProvider = ({ children }) => {
 
     const [admin, setAdmin] = useState(true); // En el futuro se desarrollara la lógica con el login
 
-    const addItem = (item, qty) => {
+    const addItem = async (item, qty) => {
+        const id = await getCartId();
         const newItem = {
             ...item,
             quantity: qty,
         };
         console.log(newItem);
-        fetch(`http://localhost:8080/api/carrito/${getCartId()}/productos`, {
+        fetch(`http://localhost:8080/api/carrito/${id}/productos`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -51,16 +51,15 @@ const CartContextProvider = ({ children }) => {
             .then((res) => console.log(res.msg));
     };
 
-    const removeItem = (itemId) => {
-        fetch(
-            `http://localhost:8080/api/carrito/${getCartId()}/productos/${itemId}`,
-            {
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            }
-        )
+    const removeItem = async (itemId) => {
+        const id = await getCartId();
+
+        fetch(`http://localhost:8080/api/carrito/${id}/productos/${itemId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
             .then((res) => res.json())
             .then((res) => alert(res.msg));
         setTimeout(() => {
@@ -68,8 +67,9 @@ const CartContextProvider = ({ children }) => {
         }, 600);
     };
 
-    const clearCart = () => {
-        fetch(`http://localhost:8080/api/carrito/${getCartId()}`, {
+    const clearCart = async () => {
+        const id = await getCartId();
+        fetch(`http://localhost:8080/api/carrito/${id}`, {
             method: "delete",
             headers: {
                 "Content-Type": "application/json",

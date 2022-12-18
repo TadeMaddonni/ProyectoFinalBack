@@ -10,9 +10,7 @@ const ModifyProduct = () => {
     useEffect(() => {
         fetch("http://localhost:8080/api/productos/")
             .then((res) => res.json())
-            .then((data) =>
-                setItem(data.products.find((el) => el.id === parseInt(id)))
-            );
+            .then((data) => setItem(data.products.find((el) => el._id === id)));
     }, []);
     return (
         <div className="modifyContainer">

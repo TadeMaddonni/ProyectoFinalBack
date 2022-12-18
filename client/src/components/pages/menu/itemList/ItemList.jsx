@@ -15,8 +15,8 @@ const ItemList = () => {
     const menuItems = menuData.map((item) => {
         return (
             <Item
-                key={item.id}
-                id={item.id}
+                key={item._id}
+                id={item._id}
                 name={item.name}
                 img={item.img}
                 price={item.price}

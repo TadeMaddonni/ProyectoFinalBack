@@ -4,7 +4,7 @@ import "./editForm.scss";
 const EditItemFomr = ({ item }) => {
     console.log(item);
     const [modifiedItem, setModifiedItem] = useState({
-        id: item.id,
+        id: item._id,
         name: item.name,
         info: item.info,
         price: item.price,
@@ -76,11 +76,11 @@ const EditItemFomr = ({ item }) => {
         ) {
             const finalItem = {
                 ...modifiedItem,
-                id: item.id,
+                id: item._id,
                 quantity: item.quantity,
             };
             console.log(finalItem);
-            modifyItem(item.id, finalItem);
+            modifyItem(item._id, finalItem);
         } else {
             alert("Alguno de los datos ingresados no son validos");
         }
@@ -92,7 +92,7 @@ const EditItemFomr = ({ item }) => {
                     <h3>Previous data</h3>
                     <div className="data">
                         <span className="dataC">
-                            ID: <span className="info">{item.id}</span>
+                            ID: <span className="info">{item._id}</span>
                         </span>
                         <span className="dataC">
                             Name: <span className="info">{item.name}</span>

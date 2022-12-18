@@ -9,8 +9,8 @@ import { useState } from "react";
 const CartContainer = () => {
     const cart = useContext(CartContext);
     const [cartItems, setCartItems] = useState([]);
-    const getCartItems = () => {
-        const cartId = cart.getCartId();
+    const getCartItems = async () => {
+        const cartId = await cart.getCartId();
         fetch(`http://localhost:8080/api/carrito/${cartId}/productos`)
             .then((res) => res.json())
             .then((res) => {
@@ -23,7 +23,7 @@ const CartContainer = () => {
     useEffect(() => {
         getCartItems();
     }, []);
-    const cartElements = cartItems.map((cartItem) => {
+    const cartElements = cartItems?.map((cartItem) => {
         return (
             <div className="cartItemContainer" key={cartItem.id}>
                 <CartItem key={cartItem.id} item={cartItem} />

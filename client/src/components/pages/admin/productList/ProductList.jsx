@@ -13,7 +13,7 @@ const ProductList = () => {
         return (
             <ProductItem
                 key={item.id}
-                id={item.id}
+                id={item._id}
                 name={item.name}
                 img={item.img}
                 price={item.price}
