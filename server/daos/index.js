@@ -1,7 +1,7 @@
 import { options } from "../config/databaseConfig.js";
 let contenedor;
 
-let databaseType = "mongodb";
+let databaseType = "firebase";
 //firebase, mongodb
 
 switch (databaseType) {

@@ -80,7 +80,7 @@ const CartContextProvider = ({ children }) => {
         localStorage.removeItem("cartId");
         setTimeout(() => {
             window.location.replace("/");
-        }, 600);
+        }, 1000);
     };
 
     const totalPrice = () => {

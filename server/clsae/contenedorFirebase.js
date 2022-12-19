@@ -133,7 +133,7 @@ export class AppFirebase {
 
     async deleteCart(cartId) {
         //Done
-        const doc = this.cartCollection.doc(id);
+        const doc = this.cartCollection.doc(cartId);
         let result = await doc.delete();
         return "Carrito borrado correctamente";
     }
